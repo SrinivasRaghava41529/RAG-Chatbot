@@ -18,6 +18,7 @@ Safe responses (Toxicity guardrails)
 Observability (Latency + logging)
 
 🏗️ Architecture
+
 User Query
    ↓
 🛡️ Input Guardrail (Toxicity Check)
@@ -41,6 +42,7 @@ User Query
 ⏱️ Latency Tracking + Logging
    ↓
 📦 API Response
+
 ✨ Features
 🔍 Retrieval & Ranking
 
@@ -89,29 +91,42 @@ Fully Dockerized
 One-command startup
 
 🧰 Tech Stack
-Component	Technology
-Backend	FastAPI
-LLM	OpenRouter
-Embeddings	BGE (HuggingFace)
-Vector DB	FAISS
-Keyword Search	BM25
-Reranker	BGE Cross-Encoder
-Evaluation	RAGAS
-Guardrails	Toxic-BERT
-Deployment	Docker
+
+         | Component      | Technology        |
+         | -------------- | ----------------- |
+         | Backend        | FastAPI           |
+         | LLM            | OpenRouter        |
+         | Embeddings     | BGE (HuggingFace) |
+         | Vector DB      | FAISS             |
+         | Keyword Search | BM25              |
+         | Reranker       | BGE Cross-Encoder |
+         | Evaluation     | RAGAS             |
+         | Guardrails     | Toxic-BERT        |
+         | Deployment     | Docker            |
+
 ⚙️ Setup Instructions
-1️⃣ Clone the Repository
-git clone <your-repo-url>
-cd evalguard-rag
+
+1️⃣ Clone the 
+
+   git clone <your-repo-url>
+   cd evalguard-rag
+
 2️⃣ Create .env File
-OPENROUTER_API_KEY=your_key
-OPENROUTER_MODEL=mistralai/mistral-7b-instruct
+
+   OPENROUTER_API_KEY=your_key
+   OPENROUTER_MODEL=mistralai/mistral-7b-instruct
+
 3️⃣ Run with Docker
-docker-compose up
+
+   docker-compose up
+
 4️⃣ Open API Docs
-http://localhost:8000/docs
+
+   http://localhost:8000/docs
+
 📥 Ingest Documents
-python ingest.py --file data/your_document.pdf
+
+   python ingest.py --file data/your_document.pdf
 
 Supports:
 
@@ -122,30 +137,36 @@ Deduplication via hashing
 Metadata tracking (file + page)
 
 📡 API Usage
+
 Endpoint
-POST /query
-Request
-{
-  "question": "What are AI agents?"
-}
-Response
-{
-  "answer": "AI agents are autonomous systems...",
-  "confidence": 0.84,
-  "faithfulness": 0.91,
-  "sources": [
-    {
-      "file": "Google-AI_Agents.pdf",
-      "page": 4
-    }
-  ],
-  "latency": {
-    "retrieval": 0.05,
-    "rerank": 0.21,
-    "generation": 1.14,
-    "total": 1.40
-  }
-}
+   POST /query
+   
+   Request
+
+   {
+   "question": "What are AI agents?"
+   }
+   
+   Response
+   
+   {
+   "answer": "AI agents are autonomous systems...",
+   "confidence": 0.84,
+   "faithfulness": 0.91,
+   "sources": [
+      {
+         "file": "Google-AI_Agents.pdf",
+         "page": 4
+      }
+   ],
+   "latency": {
+      "retrieval": 0.05,
+      "rerank": 0.21,
+      "generation": 1.14,
+      "total": 1.40
+   }
+   }
+
 🧠 Key Design Decisions
 🔹 Hybrid Retrieval
 
@@ -179,6 +200,7 @@ total response time
 Logs stored in:
 
 logs/rag.log
+
 🛡️ Safety Features
 
 Input toxicity blocking
@@ -190,48 +212,24 @@ Answer validation
 Hallucination detection
 
 📁 Project Structure
-evalguard-rag/
-│
-├── api/
-├── ingestion/
-├── retrieval/
-├── orchestration/
-├── evaluation/
-├── guardrails/
-├── monitoring/
-├── metadata/
-├── config/
-│
-├── data/
-├── logs/
-│
-├── ingest.py
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
-🚀 Future Improvements
-
-Streaming responses
-
-UI dashboard (Streamlit)
-
-Query analytics
-
-Vector DB (Pinecone / Weaviate)
-
-Auth & multi-user support
-
-🏆 Why This Project Stands Out
-
-This is not just a chatbot. It demonstrates:
-
-End-to-end RAG system design
-
-Evaluation-aware GenAI pipelines
-
-Production-level guardrails
-
-Observability & performance tracking
-
-Deployment readiness
+  
+   evalguard-rag/
+   │
+   ├── api/
+   ├── ingestion/
+   ├── retrieval/
+   ├── orchestration/
+   ├── evaluation/
+   ├── guardrails/
+   ├── monitoring/
+   ├── metadata/
+   ├── config/
+   │
+   ├── data/
+   ├── logs/
+   │
+   ├── ingest.py
+   ├── Dockerfile
+   ├── docker-compose.yml
+   ├── requirements.txt
+   └── README.md
