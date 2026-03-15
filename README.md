@@ -20,27 +20,49 @@ Observability (Latency + logging)
 🏗️ Architecture
 
 User Query
+
    ↓
+
 🛡️ Input Guardrail (Toxicity Check)
+
    ↓
+
 🔍 Hybrid Retrieval
+
    ├── FAISS (Semantic Search)
+
    └── BM25 (Keyword Search)
+
    ↓
+
 🔄 Merge + Deduplicate
+
    ↓
+
 📊 Cross-Encoder Reranker
+
    ↓
+
 🤖 LLM (OpenRouter)
+
    ↓
+
 🛡️ Output Guardrail (Toxicity Check)
+
    ↓
+
 📈 Evaluation
+
    ├── Confidence Score
+
    └── RAGAS (Faithfulness)
+
    ↓
+
 ⏱️ Latency Tracking + Logging
+
    ↓
+
 📦 API Response
 
 ✨ Features
@@ -144,30 +166,49 @@ Endpoint
    Request
 
    {
+
    "question": "What are AI agents?"
+
    }
    
    Response
    
    {
+
    "answer": "AI agents are autonomous systems...",
+
    "confidence": 0.84,
+
    "faithfulness": 0.91,
+
    "sources": [
+
       {
+
          "file": "Google-AI_Agents.pdf",
+
          "page": 4
+
       }
+
    ],
+
    "latency": {
+
       "retrieval": 0.05,
+
       "rerank": 0.21,
+
       "generation": 1.14,
+
       "total": 1.40
+
    }
+
    }
 
 🧠 Key Design Decisions
+
 🔹 Hybrid Retrieval
 
 Combines semantic + keyword search to improve recall and accuracy.
@@ -193,8 +234,11 @@ Ensures both user input and model output are safe.
 The system tracks:
 
 retrieval latency
+
 reranking latency
+
 generation latency
+
 total response time
 
 Logs stored in:
@@ -214,22 +258,41 @@ Hallucination detection
 📁 Project Structure
   
    evalguard-rag/
+
    │
+
    ├── api/
+
    ├── ingestion/
+
    ├── retrieval/
+
    ├── orchestration/
+
    ├── evaluation/
+
    ├── guardrails/
+
    ├── monitoring/
+
    ├── metadata/
+
    ├── config/
+
    │
+
    ├── data/
+
    ├── logs/
+
    │
+
    ├── ingest.py
+
    ├── Dockerfile
+
    ├── docker-compose.yml
+
    ├── requirements.txt
+
    └── README.md
