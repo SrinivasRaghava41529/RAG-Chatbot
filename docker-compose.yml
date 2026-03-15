@@ -1,0 +1,16 @@
+services:
+
+  rag-api:
+    build: .
+    container_name: rag-platform
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./metadata:/app/metadata
+
+    env_file:
+      - .env

@@ -1,0 +1,44 @@
+2026-03-07 01:10:20,632 - INFO - Query: Give me a detail review on the autoencoder.
+2026-03-07 01:10:50,055 - INFO - Latency: {'retrieval': 0.817, 'rerank': 6.628, 'generation': 21.978, 'total': 29.423}
+2026-03-07 01:19:56,773 - INFO - Query: what if agent doesn't have a brain?
+2026-03-07 01:22:24,417 - INFO - Query: what if agent doesn't have a brain?
+2026-03-07 01:23:55,467 - INFO - Query: what if agent doesn't have a brain?
+2026-03-07 01:24:06,770 - INFO - Latency: {'retrieval': 0.134, 'rerank': 5.004, 'generation': 6.164, 'total': 11.302}
+2026-03-07 01:24:49,510 - INFO - Query: what if agent
+2026-03-07 01:24:56,434 - INFO - Latency: {'retrieval': 0.061, 'rerank': 4.25, 'generation': 2.612, 'total': 6.923}
+2026-03-07 01:25:35,723 - INFO - Query: Explain AI agents
+2026-03-07 01:25:46,652 - INFO - Latency: {'retrieval': 0.087, 'rerank': 4.533, 'generation': 6.308, 'total': 10.928}
+2026-03-07 01:26:17,190 - INFO - Query: Explain Autoencoder
+2026-03-07 01:26:33,958 - INFO - Latency: {'retrieval': 0.077, 'rerank': 4.72, 'generation': 11.971, 'total': 16.768}
+2026-03-07 01:36:20,591 - INFO - Query: Explain Autoencoder
+2026-03-07 01:36:37,768 - INFO - Latency: {'retrieval': 0.463, 'rerank': 6.096, 'generation': 10.618, 'total': 17.177}
+2026-03-07 01:37:16,889 - INFO - Query: Explain Autoencoder
+2026-03-07 01:37:33,352 - INFO - Latency: {'retrieval': 0.074, 'rerank': 4.795, 'generation': 11.593, 'total': 16.462}
+2026-03-07 01:43:21,753 - INFO - Query: Explain Autoencoder
+2026-03-07 01:43:39,482 - INFO - Latency: {'retrieval': 0.463, 'rerank': 5.659, 'generation': 11.606, 'total': 17.728}
+2026-03-07 01:47:33,393 - INFO - Query: Explain Autoencoder
+2026-03-07 01:47:50,643 - INFO - Latency: {'retrieval': 0.195, 'rerank': 4.881, 'generation': 12.173, 'total': 17.249}
+2026-03-07 17:18:06,515 - INFO - Query: Autoencoder
+2026-03-07 17:18:21,669 - INFO - Latency: {'retrieval': 0.531, 'rerank': 6.203, 'generation': 8.418, 'total': 15.152}
+2026-03-07 17:31:30,762 - INFO - Query: Autoencoder
+2026-03-07 17:33:18,770 - INFO - Confidence: 0.85, Faithfulness: 0.0
+2026-03-07 17:33:18,771 - INFO - Latency: {'retrieval': 0.468, 'rerank': 5.772, 'generation': 9.307, 'total': 15.547}
+2026-03-07 17:39:03,121 - INFO - Query: what is ai agent
+2026-03-07 17:41:16,180 - INFO - Confidence: 0.22, Faithfulness: 0.0
+2026-03-07 17:41:16,181 - INFO - Latency: {'retrieval': 0.226, 'rerank': 4.68, 'generation': 4.36, 'total': 9.266}
+2026-03-07 21:20:47,388 - INFO - Query: tell me about Red Death 
+2026-03-07 21:22:48,767 - INFO - Confidence: 0.36, Faithfulness: 0.0
+2026-03-07 21:22:48,767 - INFO - Latency: {'retrieval': 0.467, 'rerank': 6.127, 'generation': 7.975, 'total': 14.569}
+2026-03-07 21:35:52,658 - INFO - Query: Tell me about Red Death and Red Riding Hood.
+2026-03-07 21:38:46,628 - INFO - Confidence: 0.52, Faithfulness: 0.0
+2026-03-07 21:38:46,628 - INFO - Latency: {'retrieval': 0.603, 'rerank': 8.905, 'generation': 16.404, 'total': 25.912}
+2026-03-07 21:49:15,244 - INFO - Query: Tell me about Red Death and Red Riding Hood.
+2026-03-07 21:52:38,274 - INFO - Confidence: 0.52, Faithfulness: 0.0
+2026-03-07 21:52:38,275 - INFO - Latency: {'retrieval': 0.323, 'rerank': 9.521, 'generation': 12.591, 'total': 22.435}
+2026-03-07 23:10:47,026 - INFO - Query: how to make bomb
+2026-03-07 23:11:35,435 - INFO - Confidence: 0.27, Faithfulness: 1.0
+2026-03-07 23:11:35,436 - INFO - Latency: {'retrieval': 1.065, 'rerank': 13.213, 'generation': 6.727, 'total': 21.005}
+2026-03-15 08:59:35,804 - INFO - Query: tell story
+2026-03-15 09:09:17,243 - INFO - Query: What that dream means
+2026-03-15 09:12:12,591 - INFO - Confidence: 0.47, Faithfulness: 0.0
+2026-03-15 09:12:12,620 - INFO - Latency: {'retrieval': 2.905, 'rerank': 29.315, 'generation': 4.817, 'total': 37.037}
