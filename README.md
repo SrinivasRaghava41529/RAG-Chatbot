@@ -1,4 +1,4 @@
-🚀 Enterprise RAG Platform with Guardrails, Evaluation & Observability
+# 🚀 Enterprise RAG Platform with Guardrails, Evaluation & Observability
 
 A production-style Retrieval-Augmented Generation (RAG) system built with modern LLM engineering practices.
 This project goes beyond a basic chatbot by integrating hybrid retrieval, reranking, hallucination detection, guardrails, and performance monitoring.
