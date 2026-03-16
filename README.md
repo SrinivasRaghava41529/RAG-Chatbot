@@ -7,15 +7,15 @@ This project goes beyond a basic chatbot by integrating hybrid retrieval, rerank
 
 This platform enables users to query documents using natural language while ensuring:
 
-Accurate retrieval (Hybrid Search)
+* Accurate retrieval (Hybrid Search)
 
-High-quality answers (Reranking)
+* High-quality answers (Reranking)
 
-Reliable outputs (Confidence + Hallucination detection)
+* Reliable outputs (Confidence + Hallucination detection)
 
-Safe responses (Toxicity guardrails)
+* Safe responses (Toxicity guardrails)
 
-Observability (Latency + logging)
+* Observability (Latency + logging)
 
 🏗️ Architecture
 
