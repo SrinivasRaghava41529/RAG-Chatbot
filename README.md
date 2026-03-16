@@ -3,7 +3,7 @@
 A production-style Retrieval-Augmented Generation (RAG) system built with modern LLM engineering practices.
 This project goes beyond a basic chatbot by integrating hybrid retrieval, reranking, hallucination detection, guardrails, and performance monitoring.
 
-**🧠 Overview**
+# **🧠 Overview**
 
 This platform enables users to query documents using natural language while ensuring:
 
@@ -65,16 +65,17 @@ User Query
 
 📦 API Response
 
-✨ Features
-🔍 Retrieval & Ranking
+# **✨ Features**
 
-Hybrid search (FAISS + BM25)
+* Retrieval & Ranking
 
-Cross-encoder reranker (BGE reranker)
+* Hybrid search (FAISS + BM25)
 
-Multi-document support
+* Cross-encoder reranker (BGE reranker)
 
-🤖 LLM Integration
+* Multi-document support
+
+# 🤖 LLM Integration
 
 OpenRouter support (plug-and-play models)
 
