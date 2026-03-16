@@ -17,7 +17,7 @@ This platform enables users to query documents using natural language while ensu
 
 * Observability (Latency + logging)
 
-🏗️ Architecture
+# **🏗️ Architecture** 
 
 User Query
 
