@@ -19,55 +19,33 @@ This platform enables users to query documents using natural language while ensu
 
 # **🏗️ Architecture** 
 
-User Query
-
-   ↓
-
-🛡️ Input Guardrail (Toxicity Check)
-
-   ↓
-
-🔍 Hybrid Retrieval
-
-   ├── FAISS (Semantic Search)
-
-   └── BM25 (Keyword Search)
-
-   ↓
-
-🔄 Merge + Deduplicate
-
-   ↓
-
-📊 Cross-Encoder Reranker
-
-   ↓
-
-🤖 LLM (OpenRouter)
-
-   ↓
-
-🛡️ Output Guardrail (Toxicity Check)
-
-   ↓
-
-📈 Evaluation
-
-   ├── Confidence Score
-
-   └── RAGAS (Faithfulness)
-
-   ↓
-
-⏱️ Latency Tracking + Logging
-
-   ↓
-
-📦 API Response
+      User Query
+         ↓
+      🛡️ Input Guardrail (Toxicity Check)
+         ↓
+      🔍 Hybrid Retrieval
+         ├── FAISS (Semantic Search)
+         └── BM25 (Keyword Search)
+         ↓
+      🔄 Merge + Deduplicate
+         ↓
+      📊 Cross-Encoder Reranker
+         ↓
+      🤖 LLM (OpenRouter)
+         ↓
+      🛡️ Output Guardrail (Toxicity Check)
+         ↓
+      📈 Evaluation
+         ├── Confidence Score
+         └── RAGAS (Faithfulness)
+         ↓
+      ⏱️ Latency Tracking + Logging
+         ↓
+      📦 API Response
 
 # **✨ Features**
 
-* Retrieval & Ranking
+**Retrieval & Ranking**
 
 * Hybrid search (FAISS + BM25)
 
@@ -75,45 +53,44 @@ User Query
 
 * Multi-document support
 
-# 🤖 LLM Integration
+**LLM Integration**
 
-OpenRouter support (plug-and-play models)
+* OpenRouter support (plug-and-play models)
 
-Modular LLM abstraction
+* Modular LLM abstraction
 
-📊 Evaluation
+**Evaluation**
 
-RAGAS-based hallucination detection (faithfulness)
+* RAGAS-based hallucination detection (faithfulness)
 
-Custom confidence scoring
 
-🛡️ Guardrails
+**🛡️ Guardrails**
 
-Input toxicity filtering
+* Input toxicity filtering
 
-Output toxicity filtering
+* Output toxicity filtering
 
-Response validation
+* Response validation
 
-⏱️ Observability
+**Observability**
 
-Latency tracking (retrieval, rerank, generation)
+* Latency tracking (retrieval, rerank, generation)
 
-Structured logging
+* Structured logging
 
-📦 API
+**API**
 
-FastAPI-based REST API
+* FastAPI-based REST API
 
-Swagger UI for testing
+* Swagger UI for testing
 
-🐳 Deployment
+**Deployment**
 
-Fully Dockerized
+* Fully Dockerized
 
-One-command startup
+* One-command startup
 
-🧰 Tech Stack
+# Tech Stack
 
          | Component      | Technology        |
          | -------------- | ----------------- |
@@ -127,173 +104,138 @@ One-command startup
          | Guardrails     | Toxic-BERT        |
          | Deployment     | Docker            |
 
-⚙️ Setup Instructions
+# Setup Instructions
 
 1️⃣ Clone the 
 
-   git clone <your-repo-url>
-   cd evalguard-rag
+      git clone https://github.com/SrinivasRaghava41529/RAG-Chatbot
+      cd evalguard-rag
 
 2️⃣ Create .env File
 
-   OPENROUTER_API_KEY=your_key
-   OPENROUTER_MODEL=mistralai/mistral-7b-instruct
+      OPENROUTER_API_KEY=your_key
+      OPENROUTER_MODEL=mistralai/mistral-7b-instruct
 
 3️⃣ Run with Docker
 
-   docker-compose up
+      docker-compose up
 
 4️⃣ Open API Docs
 
-   http://localhost:8000/docs
+      http://localhost:8000/docs
 
-📥 Ingest Documents
+# Ingest Documents
 
-   python ingest.py --file data/your_document.pdf
+      python ingest.py --file data/your_document.pdf
 
-Supports:
+**Supports**:
 
-Multi-document ingestion
+* Multi-document ingestion
 
-Deduplication via hashing
+* Deduplication via hashing
 
-Metadata tracking (file + page)
+* Metadata tracking (file + page)
 
-📡 API Usage
+# API Usage
 
-Endpoint
-   POST /query
+**Endpoint**
+      
+      POST /query
    
-   Request
-
-   {
-
-   "question": "What are AI agents?"
-
-   }
-   
-   Response
-   
-   {
-
-   "answer": "AI agents are autonomous systems...",
-
-   "confidence": 0.84,
-
-   "faithfulness": 0.91,
-
-   "sources": [
+**Request**
 
       {
-
-         "file": "Google-AI_Agents.pdf",
-
-         "page": 4
-
+        "question": "What are AI agents?"
       }
 
-   ],
-
-   "latency": {
-
-      "retrieval": 0.05,
-
-      "rerank": 0.21,
-
-      "generation": 1.14,
-
-      "total": 1.40
-
+**Response**
+   
+     {
+     "answer": "AI agents are autonomous systems...",
+     "confidence": 0.84,
+     "faithfulness": 0.91,
+     "sources": [
+       {
+         "file": "pdf1",
+         "page": 4
+       }
+     ],
+     "latency": {
+       "retrieval": 0.05,
+       "rerank": 0.21,
+       "generation": 1.14,
+       "total": 1.40
+     }
    }
 
-   }
-
-🧠 Key Design Decisions
+# Key Design Decisions
 
 🔹 Hybrid Retrieval
 
-Combines semantic + keyword search to improve recall and accuracy.
+   Combines semantic + keyword search to improve recall and accuracy.
 
 🔹 Reranking
 
-Uses cross-encoder to refine top results → reduces hallucination.
+   Uses cross-encoder to refine top results → reduces hallucination.
 
 🔹 Confidence Scoring
 
-Combines retrieval + rerank + answer quality signals.
+   Combines retrieval + rerank + answer quality signals.
 
 🔹 RAGAS Integration
 
-Measures faithfulness to detect hallucinations.
+   Measures faithfulness to detect hallucinations.
 
 🔹 Guardrails
 
-Ensures both user input and model output are safe.
+   Ensures both user input and model output are safe.
 
-📊 Observability
+# Observability
 
-The system tracks:
+   * The system tracks:
+   
+   * retrieval latency
+   
+   * reranking latency
+   
+   * generation latency
+   
+   * total response time
 
-retrieval latency
+   Logs stored in:
 
-reranking latency
+      logs/rag.log
 
-generation latency
+# Safety Features
 
-total response time
+* Input toxicity blocking
 
-Logs stored in:
+* Output moderatio0n
 
-logs/rag.log
+* Answer validation
 
-🛡️ Safety Features
+* Hallucination detection
 
-Input toxicity blocking
-
-Output moderation
-
-Answer validation
-
-Hallucination detection
-
-📁 Project Structure
+# 📁 Project Structure
   
-   evalguard-rag/
-
-   │
-
-   ├── api/
-
-   ├── ingestion/
-
-   ├── retrieval/
-
-   ├── orchestration/
-
-   ├── evaluation/
-
-   ├── guardrails/
-
-   ├── monitoring/
-
-   ├── metadata/
-
-   ├── config/
-
-   │
-
-   ├── data/
-
-   ├── logs/
-
-   │
-
-   ├── ingest.py
-
-   ├── Dockerfile
-
-   ├── docker-compose.yml
-
-   ├── requirements.txt
-
-   └── README.md
+     rag-chatbot/
+      │
+      ├── api/
+      ├── ingestion/
+      ├── retrieval/
+      ├── orchestration/
+      ├── evaluation/
+      ├── guardrails/
+      ├── monitoring/
+      ├── metadata/
+      ├── config/
+      │
+      ├── data/
+      ├── logs/
+      │
+      ├── ingest.py
+      ├── Dockerfile
+      ├── docker-compose.yml
+      ├── requirements.txt
+      └── README.md
+         
