@@ -3,7 +3,7 @@
 A production-style Retrieval-Augmented Generation (RAG) system built with modern LLM engineering practices.
 This project goes beyond a basic chatbot by integrating hybrid retrieval, reranking, hallucination detection, guardrails, and performance monitoring.
 
-🧠 Overview
+**🧠 Overview**
 
 This platform enables users to query documents using natural language while ensuring:
 
